@@ -26,9 +26,10 @@ def return_book():
     book_list()
     number = int(input("Enter the number of days you borrow the book: "))
     if number > 10:
-        number = number - 10
-        fine = 2
-        fine = number * fine
+        
+        minus = number - 10
+        fine = 0.5
+        fine = minus * fine
         price = (listsBooks[ID][3])
         p1 = float(price.strip("$"))
         total = round(fine + p1,2)
@@ -51,9 +52,11 @@ def return_book():
             book_list()
             number = int(input("Enter the number of days you borrow the book: "))
             if number > 10:
-                number = number - 10
-                fine = 2
-                fine = number * fine
+                
+                minus = number - 10
+                
+                fine = 0.5
+                fine = minus * fine
                 price = (listsBooks[ID][3])
                 p1 = float(price.strip("$"))
                 total = round(fine + p1,2)

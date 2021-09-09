@@ -1,0 +1,7 @@
++++++++++++++++++++++++++++++++++++ 
+    Library Management System       
+
+ Book is borrowed by: Pukar
+The time of borrowed book is: 00:27:11
+The date of borrowed book is : 10/09/2021
+The borrowed book is: Harry Potter, Start With Why, 
