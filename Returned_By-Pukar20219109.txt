@@ -1,0 +1,10 @@
++++++++++++++++++++++++++++++++++++ 
+    Library Management System       
+
+ Book is return by: Pukar
+The time of return book is: 12:01:00
+The date of return book is : 10/09/2021
+The return book is: Start With Why
+The fine is: $2.5
+The price of the book is: $1.5
+The total price of the book is: 4.0

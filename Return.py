@@ -39,6 +39,8 @@ def return_book():
         bill(name, ID, t, d, fine, price, total)
         
     else:
+        total = 0
+        fine = 0
         listsBooks = lists()
         price = (listsBooks[ID][3])
         print("The total price of the book is",str(price))
@@ -66,6 +68,7 @@ def return_book():
                 bill(name, ID, t, d, fine, price, total)
                 
             else:
+                fine = 0
                 listsBooks = lists()
                 price = (listsBooks[ID][3])
                 print("The total price of the book is ",str(price))
@@ -125,5 +128,4 @@ def bill(name, ID, t, d, fine, price, total):
         f.write("The total price of the book is: "+str(total)+"\n")
         
         
-
 

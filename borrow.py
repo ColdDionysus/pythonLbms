@@ -16,69 +16,82 @@ def lists():
 
 
 def borrowBook():
-    I = int(input("Enter ID of the book you want to borrow: "))
-    
-    listBooks = lists()
-    if I >= 0 and I <= 5:
-        if int(listBooks[I][2]) > 0:
-            print("\n+++++++++++++++++++++")
-            print("Book is available")
-            print("+++++++++++++++++++++ \n")
+    try:
+        I = int(input("Enter ID of the book you want to borrow: "))
+        
+        listBooks = lists()
+        if I >= 0 and I <= 5:
+            if int(listBooks[I][2]) > 0:
+                print("\n+++++++++++++++++++++")
+                print("Book is available")
+                print("+++++++++++++++++++++ \n")
 
-            name = input(
-                "Enter the name of person who want to borrow the books: ")
-            change_quantity(I)
-            
-    # we have to generate bill here so will do it later
-            dt = datetime.datetime.now()
-            t = dt.strftime("%H:%M:%S")
-            d = dt.strftime("%d/%m/%Y")
-            s = 0
+                name = input(
+                    "Enter the name of person who want to borrow the books: ")
+                change_quantity(I)
+                
+        # we have to generate bill here so will do it later
+                dt = datetime.datetime.now()
+                t = dt.strftime("%H:%M:%S")
+                d = dt.strftime("%d/%m/%Y")
+                s = 0
 
-            
-            while(True):
-                YesNo = input(
-                    "If 'Yes' please enter 'Y' or No for 'N' to cancel this borrowing process")
+                
+                while(True):
+                    YesNo = input(
+                        "If 'Yes' please enter 'Y' or No for 'N' to cancel this borrowing process")
 
-                if YesNo == "y" or YesNo == "Y":
+                    if YesNo == "y" or YesNo == "Y":
 
-                    s = s+1
-                    ID = int(
-                        input("Enter id of the book that you want to borrow: "))
-                    # validation(ID)
-                    listBooks = lists()
-                    if ID >= 0 and ID <= 5:
-                        if int(listBooks[ID][2]) > 0:
-                            print("\n +++++++++++++++++++++")
-                            print("Book is available")
-                            print("+++++++++++++++++++++ \n")
-                            change_quantity(ID)
-                            bill(name, I, ID, t, d)
+                        s = s+1
+                        ID = int(
+                            input("Enter id of the book that you want to borrow: "))
+                        # validation(ID)
+                        listBooks = lists()
+                        if ID >= 0 and ID <= 5:
+                            if int(listBooks[ID][2]) > 0:
+                                print("\n +++++++++++++++++++++")
+                                print("Book is available")
+                                print("+++++++++++++++++++++ \n")
+                                change_quantity(ID)
+                                bill(name, I, ID, t, d)
 
-                            # quantity change or updates
+                                
 
-                            print("\n")
-                            total(I, ID)
-                            # total costs chainxha yetaa
-                            print("customers details: ")
+                                print("\n")
+                                total(I, ID)
+                                
+                                
 
+                            else:
+                                print("\n")
+                                print("Book is not available")
+                                print("\n")
                         else:
-                            print("Book is not available")
+                            print("\n")
+                            print("Please Provide a valid number")
+                            print("\n")
                     else:
-                        print("Please Provide a valid number")
-                else:
-                    print("\n \n")
-                    print("Thank You "+name+" For Borrowing Books")
-                    break
+                        print("\n \n")
+                        print("Thank You "+name+" For Borrowing Books")
+                        break
 
-                    # second time book borrow garna ko lagi
-                    # ani book borrow hune code esmai hunxa
+                        # second time book borrow garna ko lagi
+                        # ani book borrow hune code esmai hunxa
+            else:
+                print("\n")
+                print("Book is not available")
+                print("\n")
         else:
-            print("Book is not available")
-    else:
-        print("Please Provide a valid number")
+            print("\n")
+            print("Please Provide a valid number")
+            print("\n")
     
-
+    except:
+        print("\n")
+        print("++++++++++++++++++++++++++++++++++++++")
+        print("Invalid Input detected")
+        print("++++++++++++++++++++++++++++++++++++++")
 
 
 
